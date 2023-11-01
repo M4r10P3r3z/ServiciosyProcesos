@@ -31,10 +31,10 @@ public class Controlador {
 
     public void iniciar() {
         for (int i=0;i<numEntradas;i++) {
-            entradas.add(new Thread(new PorteroEntrada(local), String.valueOf(i+1)));
+            entradas.add(new Thread(new PorteroEntrada(local), "Entrada " + (i + 1)));
         }
         for (int i=0;i<numSalidas;i++) {
-            salidas.add(new Thread(new PorteroSalida(local), String.valueOf(i+1)));
+            salidas.add(new Thread(new PorteroSalida(local), "Salida " + (i + 1)));
         }
         for (Thread thread: entradas) {
             thread.start();
@@ -68,7 +68,7 @@ public class Controlador {
     public void aniadirEntrada() {
         this.numEntradas++;
         if (isFuncionando()) {
-            entradas.add(new Thread(new PorteroEntrada(local), String.valueOf(numEntradas)));
+            entradas.add(new Thread(new PorteroEntrada(local), "Entrada " + numEntradas));
             entradas.get(numEntradas-1).start();
         }
     }
@@ -84,7 +84,7 @@ public class Controlador {
     public void aniadirSalida() {
         this.numSalidas++;
         if (isFuncionando()) {
-            salidas.add(new Thread(new PorteroSalida(local), String.valueOf(numSalidas)));
+            salidas.add(new Thread(new PorteroSalida(local), "Salida " + numSalidas));
             salidas.get(numSalidas-1).start();
         }
     }

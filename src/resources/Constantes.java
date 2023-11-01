@@ -11,5 +11,4 @@ public class Constantes {
     public static final double CASI_VACIO = 0.3;
     public static final double MEDIO = 0.6;
     public static final double CASI_LLENO = 0.9;
-    public static final double LLENO = 1;
 }

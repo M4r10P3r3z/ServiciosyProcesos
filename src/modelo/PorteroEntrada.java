@@ -17,7 +17,7 @@ public class PorteroEntrada implements Runnable{
                         Constantes.MAXIMO_TIEMPO_ESPERA));
                 local.entrarPersona();
             } catch (InterruptedException e) {
-                System.out.println("Cerrando hilo " + Thread.currentThread().getName());
+                System.out.println("Cerrando hilo: " + Thread.currentThread().getName());
                 ejecutando = false;
             }
         }
